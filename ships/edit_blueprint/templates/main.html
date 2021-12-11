@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" type= "text/css" href="static/style.css">
+    <title>Edit orders</title>
+</head>
+<body>
+    <nav class="navMenu">
+      <a href="/queries/query">Запросы</a>
+      <a href="/authorize">Авторизация</a>
+      <a href="/edit/insert">Создать заказ</a>
+      <div class="dot"></div>
+    </nav>
+<div>
+    <br><br>
+    <br><br>    <br><br>
+</div>
+    <h2 align="center">Все заказы</h2>
+    <br>
+    {% if items %}
+    <div align="center">
+        <table border = 0 width= 50% >
+            {% for head in heads %}
+            <th align="left">{{head}}</th>
+            {% endfor %}
+        {% for item in items %}
+            <tr>
+                <td>{{item['client_name']}}</td>
+                <td>{{item['client_brth']}}</td>
+                <td>{{item['client_pass_id']}}</td>
+                <td>{{item['nomber_race']}}</td>
+                <td>
+                    <form action="" method="post">
+                        <input type="hidden" name="id_order" value="{{item['id_order']}}">
+                        <input type="submit" name="action" value="Удалить">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    {% endif %}
+<br><br>
+</body>
+</html>

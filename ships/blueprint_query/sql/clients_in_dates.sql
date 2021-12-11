@@ -1,0 +1,1 @@
+SELECT client_brth, client_name, nomber_race from fly_tickets.full_orders where client_pass_id = '$pass_id';

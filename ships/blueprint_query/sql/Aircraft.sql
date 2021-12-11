@@ -1,0 +1,1 @@
+select * from ticket where date_depart = '$dates'

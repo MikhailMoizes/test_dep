@@ -1,0 +1,20 @@
+{
+  "user": [
+    "",
+    "user_app.auth",
+    "user_app.query"
+  ],
+  "admin": [
+    "",
+    "user_app.auth",
+    "user_app.query",
+    "user_app.soldout_tickets",
+    "user_app.depart_date",
+    "edit_app.index_delete",
+    "edit_app.insert",
+    "basket.list_order_handler"
+  ],
+  "unauthorized": [
+    "user_app.auth"
+  ]
+}

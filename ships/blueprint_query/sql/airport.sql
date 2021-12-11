@@ -1,0 +1,1 @@
+SELECT 	client_name, nomber_race, airport_out, airport_in, date_depart, date_arrive FROM full_orders where airport_out='$airport';

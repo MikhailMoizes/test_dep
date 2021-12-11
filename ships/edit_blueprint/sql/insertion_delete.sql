@@ -1,0 +1,1 @@
+delete from ticket where idTicket = '$gen4';

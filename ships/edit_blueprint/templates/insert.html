@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type= "text/css" href="static/style.css">
+    <title>Добавить заказ</title>
+</head>
+<body>
+<div align="center">
+    <br>
+    <h1>Создать новый заказ</h1>
+    <br>
+    <form action="" method="post">
+        <input class="upper" type="text" name="client_name" placeholder="Фамилия Имя Отчество" required pattern="[A-Z]+\s[A-Z]+\s[A-Z]+">
+        <input type="date" name="client_brth" placeholder="Дата рождения" required>
+        <input type="text" name="client_pass_id" placeholder="Номер документа" required pattern="[0-9]{10}">
+        <input type="text" name="tickets_id" placeholder="ID билета" required pattern="[0-9]+">
+        <input type="submit" name="insert" value="Создать">
+    </form>
+
+    <br>
+    <form>
+        <input type="button" onclick="window.location.href = '/edit';" value="Назад"/>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h3>Доступные билеты</h3>
+    <br>
+        <table class="table">
+        <tr>{%for i in range(n)%}
+            <td>{{head[i]}}</td>
+        {%endfor%}</tr>
+        {%for j in items%}
+        <tr>{%for i in range(n)%}
+        <td> {{j[i]}} </td>
+            {%endfor%}</tr>
+        {%endfor%}
+    </table>
+    <br>
+</div>
+</body>
+</html>

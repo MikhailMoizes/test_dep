@@ -1,0 +1,1 @@
+delete from full_orders where id_order = '$gen1'

@@ -1,0 +1,1 @@
+select id_order, client_name, client_brth, client_pass_id, nomber_race from fly_tickets.full_orders

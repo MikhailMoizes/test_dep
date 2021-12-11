@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type= "text/css" href="static/style.css">
+    <title>Работа с запросами</title>
+</head>
+<body>
+    <nav class="navMenu">
+      <a href="/queries/query">Запросы</a>
+      <a href="/authorize">Авторизация</a>
+      <a href="/edit">Изменение заказа</a>
+      <div class="dot"></div>
+    </nav>
+    <br><br>
+    <br><br>
+    <br><br>
+
+    <div align="center">
+        <form action="" method="post">
+            <select autofocus required name = "queries">
+                <option disabled>Выберите запрос</option>
+                <option value="1">Все билеты в указанную дату вылета</option>
+                <option value="2">Проданные билеты по аэропорту отправления</option>
+                <option value="3">Показать клиента по номеру документа</option>
+            </select>
+           <input type="submit"></p>
+        </form>
+
+
+        {% if flag==1 %}
+        <br>
+            <form action="" method="POST">
+                <input type="date" name="Date" placeholder="Дата вылета" required>
+                <input type="submit" value="Отправить запрос">
+            </form>
+            <br>
+                <table border="2" class="table">
+                <tr>{%for i in range(n)%}
+                    <td>{{head[i]}}</td>
+                {%endfor%}</tr>
+                {%for j in items%}
+                <tr>{%for i in range(n)%}
+                <td> {{j[i]}} </td>
+                    {%endfor%}</tr>
+                {%endfor%}
+            </table>
+            <br>
+            <form>
+                 <input type="submit" onclick="window.location.href = '/queries/query';" value="Отчистить"/>
+            </form>
+        {% endif %}
+
+
+        {% if flag==2 %}
+        <br>
+        <form action="" method="POST">
+            <input type="text" name="airport", placeholder="Код аэропорта" required pattern="[A-Z]{3}">
+            <input type="submit" value="Отправить запрос">
+        </form>
+        <br>
+                <table border="2" >
+                <tr>{%for i in range(n)%}
+                    <td>{{head[i]}}</td>
+                {%endfor%}</tr>
+                {%for j in items%}
+                <tr>{%for i in range(n)%}
+                <td> {{j[i]}} </td>
+                    {%endfor%}</tr>
+                {%endfor%}
+            </table>
+            <br>
+            <form>
+                 <input type="submit" onclick="window.location.href = '/queries/query';" value="Отчистить"/>
+            </form>
+        {% endif %}
+
+
+        {% if flag==3 %}
+        <br>
+        <form action="" method="POST">
+            <input type="text" name="id", placeholder="Номер документа" required pattern="[0-9]{10}">
+            <input type="submit" value="Отправить запрос">
+        </form>
+        <br>
+                <table border="2" class="table">
+                <tr>{%for i in range(n)%}
+                    <td>{{head[i]}}</td>
+                {%endfor%}</tr>
+                {%for j in items%}
+                <tr>{%for i in range(n)%}
+                <td> {{j[i]}} </td>
+                    {%endfor%}</tr>
+                {%endfor%}
+            </table>
+            <br>
+            <form>
+                 <input type="submit" onclick="window.location.href = '/queries/query';" value="Отчистить"/>
+            </form>
+        {% endif %}
+
+        {% if flag==4 %}
+        <h1>Упс, ничего не нашлось:(</h1>
+        <h2>Попробуйте поменять условие запроса, и может быть что-то найдётся.</h2>
+        {% endif %}
+        <br>
+    </div>
+</body>
+</html>
